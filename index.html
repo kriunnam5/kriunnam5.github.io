@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krishna Unnam – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceff3;--ink:#18202e;--muted:#5d6879;--line:#aab3c2;--accent:#2d4bff;--frame:#e0e5ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151b;--ink:#e8ecf3;--muted:#9099a8;--line:#3a4252;--accent:#8a9bff;--frame:#1b2029}}
+:root[data-theme="dark"]{--bg:#12151b;--ink:#e8ecf3;--muted:#9099a8;--line:#3a4252;--accent:#8a9bff;--frame:#1b2029}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;gap:16px;padding:22px 0;font-size:.95rem}
+nav a{color:var(--ink);text-decoration:none;margin-left:20px}
+nav a:hover,nav a:focus-visible{color:var(--accent);outline:none;text-decoration:underline}
+nav strong{font-weight:600}
+header{padding:72px 0 56px}
+h1{font-size:clamp(2.8rem,10vw,7rem);line-height:.95;font-weight:800;letter-spacing:-.035em;margin:0 0 24px;max-width:12ch}
+.lede{font-size:1.2rem;color:var(--muted);max-width:52ch;margin:0}
+[contenteditable]{outline:none;border-radius:4px}
+[contenteditable]:focus-visible{box-shadow:0 0 0 2px var(--accent)}
+[contenteditable]:empty::before{content:attr(data-ph);color:var(--line)}
+h2{font-size:1.5rem;font-weight:600;margin:0 0 24px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.card{grid-column:span 3}
+.card.wide{grid-column:span 6}
+.card.third{grid-column:span 2}
+.frame{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:4/3;border:2px dashed var(--line);border-radius:6px;background:var(--frame) center/cover no-repeat;color:var(--muted);cursor:pointer;font:inherit;font-size:.95rem;padding:0}
+.card.wide .frame{aspect-ratio:21/9}
+.card.third .frame{aspect-ratio:1/1}
+.frame:hover,.frame:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+.frame.filled{border-style:solid;border-color:transparent}
+.frame.filled span{display:none}
+.meta{padding-top:12px}
+.title{font-weight:600;font-size:1.1rem}
+.desc{color:var(--muted);font-size:.95rem}
+.add{margin:32px 0 0;font:inherit;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:10px 22px;cursor:pointer}
+.add:hover,.add:focus-visible{background:var(--ink);color:var(--bg);outline:none}
+section{padding:24px 0 56px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{margin:0 0 16px;max-width:60ch}
+.contact a{color:var(--accent)}
+.job{display:grid;grid-template-columns:160px 1fr;gap:8px 32px;border-top:1px solid var(--line);padding:20px 0 28px}.job .when{color:var(--muted)}.job h3{margin:0;font-size:1.15rem;font-weight:600}.job .role{color:var(--accent);margin:0 0 8px}.job p{margin:0;max-width:62ch}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.9rem}
+@media (max-width:720px){.card,.card.third{grid-column:span 6}.about,.job{grid-template-columns:1fr}header{padding:40px 0 32px}nav a{margin-left:14px}}
+@media print{nav,.add{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <strong contenteditable="true" spellcheck="false" data-ph="Your name">Krishna Unnam</strong>
+    <div><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header>
+    <h1 contenteditable="true" spellcheck="false" data-ph="Your headline">Krishna Unnam</h1>
+    <p class="lede" contenteditable="true" data-ph="One or two sentences about what you do and who you do it for.">Software and UI/UX developer, and bioengineering student at UIUC. I build hardware and software to improve the patient experience in hospitals.</p>
+  </header>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <div class="grid" id="grid"></div>
+    <button class="add" id="add" type="button">Add project</button>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="job"><div class="when">2025 – Present</div><div><h3>Personalized Medicine</h3><p class="role">Developer</p><p>Building an awareness platform on personalized medicine for 10+ diseases. A full-stack React Native app processes 15+ symptom inputs alongside genetic and environmental factors, with a RAG model that gives adaptive explanations and draws on 3 medical databases.</p></div></div>
+    <div class="job"><div class="when">2025</div><div><h3>CardioGRAPH</h3><p class="role">Biomedical Data Engineer</p><p>Integrated 5+ biomedical databases into a Neo4j knowledge graph linking 1,000+ drug-disease correlations for cardiotoxicity. Generated embeddings for 9,000+ nodes with Node2Vec and DVGAE to predict cardiotoxic links, and deployed an LLM-powered agentic interface for analyzing pathways across 4 heart conditions.</p></div></div>
+    <div class="job"><div class="when">2024 – Present</div><div><h3>i-MADE: Heart Attack Detection</h3><p class="role">Project Manager</p><p>Leading a team building a low-cost ECG device that tells 4 heart arrhythmias apart. Applied signal processing (HRV, PCA, bandpass filtering, baselining) and built a live dashboard that displays each segment of the heartbeat from open-source ECG datasets.</p></div></div>
+    <div class="job"><div class="when">2019 – 2024</div><div><h3>Robotics</h3><p class="role">Programming Lead</p><p>Integrated machine learning and color-threshold object detection for camera vision. Built motion-planning trajectories with over 95% accuracy, validated them in MeepMeep simulations, and used a finite-state machine to eliminate collisions.</p></div></div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <p contenteditable="true" data-ph="Write a short bio.">I'm a bioengineering student at the University of Illinois Urbana-Champaign, with minors in Computer Science and Electrical Engineering. I'm interested in combining hardware and software to create devices that make hospital stays better for patients.</p>
+      <p contenteditable="true" data-ph="Skills, tools, clients, or awards.">Skills: Java, Python, JavaScript, C++, HTML &amp; CSS.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p contenteditable="true" data-ph="Add your email and links"><a href="mailto:kunna@illinois.edu">kunna@illinois.edu</a> · (309) 323-7195 · <a href="https://9a7f983b-ec72-46ad-9323-a8186c627063.filesusr.com/ugd/4e7067_8313782578434015a1b747f25fcdf7be.pdf">Download resume</a></p>
+  </section>
+
+  <footer contenteditable="true" data-ph="© Your Name">© Krishna Unnam</footer>
+</div>
+
+<input type="file" id="file" accept="image/*" hidden>
+<script>
+var grid=document.getElementById('grid'),file=document.getElementById('file'),target=null;
+var sizes=['wide','','','third','third','third'];
+function addCard(i){
+  var s=sizes[i%sizes.length];
+  var c=document.createElement('article');
+  c.className='card '+s;
+  c.innerHTML='<button type="button" class="frame" aria-label="Add project image"><span>Click to add an image</span></button>'+
+    '<div class="meta"><div class="title" contenteditable="true" spellcheck="false" data-ph="Project title"></div>'+
+    '<div class="desc" contenteditable="true" data-ph="Short description, year, or role"></div></div>';
+  c.querySelector('.frame').addEventListener('click',function(e){target=e.currentTarget;file.click();});
+  grid.appendChild(c);
+}
+file.addEventListener('change',function(){
+  var f=file.files[0];if(!f||!target)return;
+  var r=new FileReader();
+  r.onload=function(){target.style.backgroundImage='url('+r.result+')';target.classList.add('filled');file.value='';};
+  r.readAsDataURL(f);
+});
+var n=0;for(;n<6;n++)addCard(n);
+document.getElementById('add').addEventListener('click',function(){addCard(n++);});
+</script>
+</body>
+</html>
